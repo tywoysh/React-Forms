@@ -1,29 +1,32 @@
 import { useState } from "react";
 
 export default function Authenticate({ token }) {
+  const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState(null);
+  const [userData, setUserData] = useState(null);
 
-    const [error, setError] = useState(null);
-    const [successMessage, setSuccessMessage] = useState(null);
-    const [userData, setUserData] = useState(null);
-
-    async function handleClick() {
-        try {
-            const response = await fetch('https://fsa-jwt-practice.herokuapp.com/authenticate', 
-            { 
-              method: "GET", 
-              headers: { 
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}` 
-              }
-            })
-            const result = await response.json();
-            console.log(result);
-            setSuccessMessage(result.message);
-            setUserData(result.data.username.username);
-        } catch (error) {
-            setError(error.message);
+  async function handleClick() {
+    try {
+      const response = await fetch(
+        "https://fsa-jwt-practice.herokuapp.com/authenticate",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
         }
+      );
+      const result = await response.json();
+      console.log(result);
+      result.message === "Correctly Authenticated!"
+        ? setUserData(result.data.username.username)
+        : setUserData(null);
+      setSuccessMessage(result.message);
+    } catch (error) {
+      setError(error.message);
     }
+  }
 
   return (
     <>

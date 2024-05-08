@@ -3,16 +3,32 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+.header {
+  background-color: rgb(150, 156, 156);
+  padding: 10px;
+  text-align: center;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   height: 50%;
-  background-color: gray;
-  border-radius: 10px;
-  border: 15px solid yellow;
+  background-color: rgb(150, 156, 156);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease-in-out;
 }
+
+/* .form:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+} */
 
 .form-element {
   padding: 20px;
