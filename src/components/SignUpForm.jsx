@@ -64,7 +64,7 @@ export default function SignUpForm({ setToken }) {
       {showConfetti && (
         <Confetti
         //   numberOfPieces={200}
-        //   confettiSource={{x:450,y:700}} // Specify the confetti source position
+        //   confettiSource={{x:0,y:0}} // Specify the confetti source position
         //   wind={0.05 + Math.random() * 0.05}
         //   initialVelocityX={Math.random() * 10 - 5}
         />
